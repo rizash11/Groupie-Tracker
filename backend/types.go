@@ -17,7 +17,7 @@ type artist struct {
 }
 
 type application struct {
-	info_log  log.Logger
-	error_log log.Logger
+	info_log  *log.Logger
+	error_log *log.Logger
 	artists   []artist
 }
