@@ -10,6 +10,7 @@ type application struct {
 	artists   []artist
 	dates     struct_dates
 	locations struct_locations
+	relations struct_relations
 }
 
 type artist struct {
@@ -25,30 +26,29 @@ type artist struct {
 }
 
 type struct_dates struct {
-	Index []date
+	Index []index_date
 }
 
-type date struct {
+type index_date struct {
 	Id    int
 	Dates []string
 }
 
 type struct_locations struct {
-	Index []location
+	Index []index_location
 }
 
-type location struct {
+type index_location struct {
 	Id        int
 	Locations []string
 	Dates     string
 }
 
 type struct_relations struct {
-	Index []relation
+	Index []index_relation
 }
 
-type relation struct {
-	Id        int
-	Locations []string
-	Dates     string
+type index_relation struct {
+	Id             int
+	DatesLocations map[string][]string
 }
