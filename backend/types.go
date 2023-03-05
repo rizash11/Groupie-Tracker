@@ -7,10 +7,7 @@ import (
 type application struct {
 	info_log  *log.Logger
 	error_log *log.Logger
-	artists   []artist
-	dates     struct_dates
-	locations struct_locations
-	relations struct_relations
+	td        *template_data
 }
 
 type artist struct {
@@ -23,6 +20,13 @@ type artist struct {
 	Locations    string
 	ConcertDates string
 	Relations    string
+}
+
+type template_data struct {
+	artists   []artist
+	dates     struct_dates
+	locations struct_locations
+	relations struct_relations
 }
 
 type struct_dates struct {

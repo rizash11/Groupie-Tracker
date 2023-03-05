@@ -19,13 +19,13 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tmpl, err := template.ParseFiles("./frontend/html/base.layout.html", "./frontend/html/home.page.html")
+	tmpl, err := template.ParseFiles("./frontend/html/home.page.html", "./frontend/html/base.layout.html")
 	if err != nil {
 		app.ServerError(w, r, err)
 		return
 	}
 
-	err = tmpl.Execute(w, nil)
+	err = tmpl.Execute(w, app.td)
 	if err != nil {
 		app.ServerError(w, r, err)
 		return

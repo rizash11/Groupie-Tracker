@@ -17,33 +17,33 @@ func (app *application) Unmarshal() {
 	data, err := os.ReadFile("./backend/api/artists.txt")
 	app.error_checker(err)
 
-	err = json.Unmarshal(data, &app.artists)
+	err = json.Unmarshal(data, &app.td.artists)
 	app.error_checker(err)
 
 	// DATES
 	data, err = os.ReadFile("./backend/api/dates.txt")
 	app.error_checker(err)
 
-	err = json.Unmarshal(data, &app.dates)
+	err = json.Unmarshal(data, &app.td.dates)
 	app.error_checker(err)
 
 	// LOCATIONS
 	data, err = os.ReadFile("./backend/api/locations.txt")
 	app.error_checker(err)
 
-	err = json.Unmarshal(data, &app.locations)
+	err = json.Unmarshal(data, &app.td.locations)
 	app.error_checker(err)
 
 	// RELATIONS
 	data, err = os.ReadFile("./backend/api/relation.txt")
 	app.error_checker(err)
 
-	err = json.Unmarshal(data, &app.relations)
+	err = json.Unmarshal(data, &app.td.relations)
 	app.error_checker(err)
 }
 
 func (app *application) NotFound(w http.ResponseWriter, r *http.Request) {
-	app.error_log.Println(http.StatusText(http.StatusNotFound))
+	// app.error_log.Println(http.StatusText(http.StatusNotFound))
 	http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
 }
 

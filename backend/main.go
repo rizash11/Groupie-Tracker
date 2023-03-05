@@ -10,6 +10,7 @@ func main() {
 	app := application{
 		info_log:  log.New(os.Stdout, "INFO:\t", log.Ldate|log.Ltime),
 		error_log: log.New(os.Stderr, "ERROR:\t", log.Ldate|log.Ltime|log.Lshortfile),
+		td:        &template_data{},
 	}
 
 	app.Unmarshal()
