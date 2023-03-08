@@ -23,10 +23,10 @@ type artist struct {
 }
 
 type template_data struct {
-	artists   []artist
-	dates     struct_dates
-	locations struct_locations
-	relations struct_relations
+	Artists   []artist
+	Dates     struct_dates
+	Locations struct_locations
+	Relations struct_relations
 }
 
 type struct_dates struct {
