@@ -3,8 +3,8 @@
 <div>
   {{ range $index, $artist := .Artists}}
   <br /><br />
-  <hr />
-  <p>Id: #{{ $index }}</p>
+
+  <p>Id: #{{ $artist.Id }}</p>
   <p>{{ $artist.Name }}</p>
 
   {{ $length := len $artist.Members}}

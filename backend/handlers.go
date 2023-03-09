@@ -10,6 +10,9 @@ func (app *application) router() *http.ServeMux {
 
 	mux.HandleFunc("/", app.home)
 
+	file_server := http.FileServer(http.Dir("./frontend/"))
+	mux.Handle("/frontend/", http.StripPrefix("/frontend", file_server))
+
 	return mux
 }
 

@@ -1,24 +1,15 @@
 {{define "base"}}
-<!doctype html>
-<style>
-    hr { 
-      display: block;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      margin-left: auto;
-      margin-right: auto;
-      border-style: inset;
-      border-width: 1px;
-    } 
-</style>
+<!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>{{template "title" .}} - Groupie Tracker</title>
-    </head>
-    
-    <body>
-        {{template "body" .}}
-    </body>
-{{end}}
+  <head>
+    <link rel="stylesheet" href="/frontend/css/main.css" />
+    <meta charset="UTF-8" />
+    <title>{{template "title" .}} - Groupie Tracker</title>
+  </head>
+
+  <body>
+    {{template "body" .}}
+  </body>
+  {{end}}
+</html>
