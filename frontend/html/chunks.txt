@@ -1,0 +1,12 @@
+inside card container was
+
+
+  <p>Id: #{{ $artist.Id }}</p>
+  <p>{{ $artist.Name }}</p>
+
+  {{ $length := len $artist.Members}}
+
+  <p>
+    ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt ($.Add 1
+    $index2) $length }}, {{else}} {{end}}{{end}})
+  </p>

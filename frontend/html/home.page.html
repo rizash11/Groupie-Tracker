@@ -1,19 +1,21 @@
-{{template "base" .}} {{define "body"}}
+{{template "base" .}} {{define "body"}} {{ range $index, $artist := .Artists}}
 
-<div>
-  {{ range $index, $artist := .Artists}}
-  <br /><br />
+<div class="card-container">
+  <div class="info-item">
+    <h6>Id: #{{ $artist.Id }}</h6>
+    <h3>{{ $artist.Name }}</h3>
 
-  <p>Id: #{{ $artist.Id }}</p>
-  <p>{{ $artist.Name }}</p>
+    {{ $length := len $artist.Members}}
 
-  {{ $length := len $artist.Members}}
+    <p>
+      ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt ($.Add
+      1 $index2) $length }}, {{else}} {{end}}{{end}})
+    </p>
+  </div>
 
-  <p>
-    ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt ($.Add 1
-    $index2) $length }}, {{else}} {{end}}{{end}})
-  </p>
-  {{end}}
+  <div class="image-item">
+    <img attr.src="{{$artist.Image}}" />
+  </div>
 </div>
 
-{{end}} {{define "title"}}Home page{{end}}
+{{end}} {{end}} {{define "title"}}Home page{{end}}
