@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html/template"
 	"log"
 )
 
@@ -12,7 +13,7 @@ type application struct {
 
 type artist struct {
 	Id           int
-	Image        string
+	Image        template.URL
 	Name         string
 	Members      []string
 	CreationDate int
