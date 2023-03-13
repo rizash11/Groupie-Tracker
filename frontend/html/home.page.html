@@ -6,11 +6,16 @@
     <h3>{{ $artist.Name }}</h3>
 
     {{ $length := len $artist.Members}}
-
     <p>
       ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt ($.Add
       1 $index2) $length }}, {{else}} {{end}}{{end}})
     </p>
+
+    <ul>
+      <li>Creation date: {{ $artist.CreationDate }}</li>
+      <li>First album: {{$artist.FirstAlbum }}</li>
+      <li>Concert dates:</li>
+    </ul>
   </div>
 
   <div class="image-item">

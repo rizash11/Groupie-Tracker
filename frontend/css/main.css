@@ -1,4 +1,26 @@
+body {
+  text-align: center;
+  background-color: gray;
+}
+
 .card-container {
+  width: 90vw;
+  background-color: antiquewhite;
+  margin: 1vh auto 1vh auto;
+  border-radius: 2vh;
+
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.info-item {
+  width: 60vw;
+  /* background-color: aqua; */
+  text-align: left;
+}
+
+.image-item {
+  width: 20vw;
+  /* background-color: aquamarine; */
 }
