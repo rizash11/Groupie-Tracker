@@ -11,11 +11,26 @@
       1 $index2) $length }}, {{else}} {{end}}{{end}})
     </p>
 
-    <ul>
-      <li>Creation date: {{ $artist.CreationDate }}</li>
-      <li>First album: {{$artist.FirstAlbum }}</li>
-      <li>Concert dates:</li>
-    </ul>
+    <p>
+      Creation date: {{ $artist.CreationDate }}<br>
+      First album: {{$artist.FirstAlbum }}<br><br>
+      <button type="button" class="collapsible">Concert dates and locations:</button>
+      <div class="relations">
+        <ul style="list-style-type: none">
+          {{ range $location, $dates := (index $.Relations.Index $index).DatesLocations }}
+            <li>
+              {{ $location }}
+              <ol style="list-style-type: none">
+                {{ range $index3, $date := $dates }}
+                  <li> {{ $date }} </li>
+                {{end}}
+              </ol>
+            </li>
+          {{end}}
+        </ul>
+      </div>
+     
+    </p>
   </div>
 
   <div class="image-item">
