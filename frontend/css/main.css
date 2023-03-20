@@ -24,9 +24,14 @@ body {
   width: 20vw;
   /* background-color: aquamarine; */
 }
-.image {
+.image-band {
   width: 50%;
   margin-top: 5%;
   margin-bottom: 5%;
   border-radius: 5%;
+}
+
+.location-item {
+  /* margin-top: 2vh; */
+  margin-bottom: 2vh;
 }
