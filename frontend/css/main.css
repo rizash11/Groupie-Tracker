@@ -3,6 +3,15 @@ body {
   background-color: gray;
 }
 
+.main-header {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
 .card-container {
   width: 90vw;
   background-color: antiquewhite;
@@ -16,13 +25,11 @@ body {
 
 .info-item {
   width: 60vw;
-  /* background-color: aqua; */
   text-align: left;
 }
 
 .image-item {
   width: 20vw;
-  /* background-color: aquamarine; */
 }
 .image-band {
   width: 50%;
@@ -32,6 +39,33 @@ body {
 }
 
 .location-item {
-  /* margin-top: 2vh; */
   margin-bottom: 2vh;
+}
+
+.id-name-members {
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.id {
+  width: 10%;
+  text-align: left;
+  vertical-align: text-top;
+}
+
+.name-members {
+  width: 90%;
+  margin: 2vh auto auto;
+}
+
+.band-name {
+  vertical-align: text-bottom;
+  margin: auto;
+}
+
+.band-members {
+  vertical-align: text-top;
+  margin: auto;
 }

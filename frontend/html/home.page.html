@@ -1,41 +1,52 @@
-{{template "base" .}} {{define "body"}} {{ range $index, $artist := .Artists}}
+{{template "base" .}} {{define "title"}}Home page{{end}} {{define "body"}}
 
-<div class="card-container">
-  <div class="info-item">
-    <h6>Id: #{{ $artist.Id }}</h6>
-    <h3>{{ $artist.Name }}</h3>
+<h1 class="main-header">Your favourite music bands API</h1>
+<body>
+  {{ range $index, $artist := .Artists}}
 
-    {{ $length := len $artist.Members}}
-    <p>
-      ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt ($.Add
-      1 $index2) $length }}, {{else}} {{end}}{{end}})
-    </p>
+  <div class="card-container">
+    <div class="info-item">
+      <div class="id-name-members">
+        <h6 class="id">Id: #{{ $artist.Id }}</h6>
 
-    Creation date: {{ $artist.CreationDate }}<br />
-    First album: {{$artist.FirstAlbum }}<br /><br />
-    <details>
-      <summary>Concert dates and locations:</summary>
-      <div>
-        <ul style="list-style-type: none">
-          {{ range $location, $dates := (index $.Relations.Index
-          $index).DatesLocations }}
-          <li class="location-item">
-            {{ $location }}
-            <ol style="list-style-type: none">
-              {{ range $index3, $date := $dates }}
-              <li>{{ $date }}</li>
-              {{end}}
-            </ol>
-          </li>
-          {{end}}
-        </ul>
+        <div class="name-members">
+          <h3 class="band-name">{{ $artist.Name }}</h3>
+
+          {{ $length := len $artist.Members}}
+          <p class="band-members">
+            ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt
+            ($.Add 1 $index2) $length }}, {{else}} {{end}}{{end}})
+          </p>
+        </div>
       </div>
-    </details>
+
+      Creation date: {{ $artist.CreationDate }}<br />
+      First album: {{$artist.FirstAlbum }}<br /><br />
+      <details>
+        <summary>Concert dates and locations:</summary>
+        <div>
+          <ul style="list-style-type: none">
+            {{ range $location, $dates := (index $.Relations.Index
+            $index).DatesLocations }}
+            <li class="location-item">
+              {{ $location }}
+              <ol style="list-style-type: none">
+                {{ range $index3, $date := $dates }}
+                <li>{{ $date }}</li>
+                {{end}}
+              </ol>
+            </li>
+            {{end}}
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="image-item">
+      <img src="{{ $artist.Image }}" class="image-band" />
+    </div>
   </div>
 
-  <div class="image-item">
-    <img src="{{ $artist.Image }}" class="image-band" />
-  </div>
-</div>
-
-{{end}} {{end}} {{define "title"}}Home page{{end}}
+  {{end}}
+</body>
+{{end}}
