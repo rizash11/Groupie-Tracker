@@ -22,7 +22,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tmpl, err := template.ParseFiles("./frontend/html/home.page.html", "./frontend/html/base.layout.html")
+	tmpl, err := template.ParseFiles("./frontend/html/home.page.html", "./frontend/html/base.layout.html", "./frontend/html/header.partial.html", "./frontend/html/footer.partial.html")
 	if err != nil {
 		app.ServerError(w, r, err)
 		return

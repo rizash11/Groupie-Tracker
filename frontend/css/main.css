@@ -1,7 +1,17 @@
 body {
   text-align: center;
-  background-color: whitesmoke;
+  background-color: white;
   margin: 0;
+}
+
+.fixed-header {
+  position: fixed;
+  height: 5vh;
+  width: 100%;
+}
+
+.footer {
+  margin: 5vh auto 2.5vh;
 }
 
 .main-header {
@@ -10,13 +20,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgb(32, 35, 41);
   color: white;
+  font-family: american typewriter, serif;
 }
 
 .card-container {
   width: 90%;
-  background-color: antiquewhite;
+  background-color: rgb(233, 233, 233);
   margin: 1vh auto 1vh auto;
   border-radius: 5vh;
 
