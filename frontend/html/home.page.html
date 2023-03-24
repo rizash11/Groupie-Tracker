@@ -1,9 +1,9 @@
 {{template "base" .}} {{define "title"}}Home page{{end}} {{define "body"}}
 
 <h1 class="main-header">Your favourite music bands API</h1>
-<body>
-  {{ range $index, $artist := .Artists}}
+{{ range $index, $artist := .Artists}}
 
+<div class="content">
   <div class="card-container">
     <div class="info-item">
       <div class="id-name-members">
@@ -46,7 +46,6 @@
       <img src="{{ $artist.Image }}" class="image-band" />
     </div>
   </div>
+</div>
 
-  {{end}}
-</body>
-{{end}}
+{{end}} {{end}}
