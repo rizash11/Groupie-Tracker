@@ -1,14 +1,12 @@
 body {
   text-align: center;
-  background-color: white;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: whitesmoke;
+  margin: 0;
 }
 
 .main-header {
   height: 50vh;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +15,7 @@ body {
 }
 
 .card-container {
-  width: 90vw;
+  width: 90%;
   background-color: antiquewhite;
   margin: 1vh auto 1vh auto;
   border-radius: 5vh;
@@ -28,14 +26,14 @@ body {
 }
 
 .info-item {
-  width: 60vw;
+  width: 60%;
   text-align: left;
 }
 
 .image-item {
-  width: 20vw;
+  width: 20%;
 }
-.image-band {
+.band-image {
   width: 50%;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -46,7 +44,7 @@ body {
   margin-bottom: 2vh;
 }
 
-.id-name-members {
+.card-header {
   text-align: center;
 
   display: flex;
@@ -59,7 +57,7 @@ body {
   vertical-align: text-top;
 }
 
-.name-members {
+.nameNmembers {
   width: 90%;
   margin: 2vh auto auto;
 }

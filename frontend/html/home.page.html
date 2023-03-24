@@ -1,50 +1,52 @@
 {{template "base" .}} {{define "title"}}Home page{{end}} {{define "body"}}
 
-<h1 class="main-header">Your favourite music bands API</h1>
-{{ range $index, $artist := .Artists}}
+<h1 class="main-header">Favourite Music Bands API</h1>
 
-<div class="content">
-  <div class="card-container">
-    <div class="info-item">
-      <div class="id-name-members">
-        <h6 class="id">Id: #{{ $artist.Id }}</h6>
+{{range $index, $artist := .Artists}}
 
-        <div class="name-members">
-          <h3 class="band-name">{{ $artist.Name }}</h3>
+<div class="card-container">
+  <div class="info-item">
+    <div class="card-header">
+      <h6 class="id">Id: #{{ $artist.Id }}</h6>
 
-          {{ $length := len $artist.Members}}
-          <p class="band-members">
-            ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt
-            ($.Add 1 $index2) $length }}, {{else}} {{end}}{{end}})
-          </p>
-        </div>
+      <div class="nameNmembers">
+        <h3 class="band-name">{{ $artist.Name }}</h3>
+
+        {{ $length := len $artist.Members}}
+        <p class="band-members">
+          ({{range $index2, $member := $artist.Members}} {{$member}}{{ if lt
+          ($.Add 1 $index2) $length }}, {{else}} {{end}}{{end}})
+        </p>
       </div>
-
-      Creation date: {{ $artist.CreationDate }}<br />
-      First album: {{$artist.FirstAlbum }}<br /><br />
-      <details>
-        <summary>Concert dates and locations:</summary>
-        <div>
-          <ul style="list-style-type: none">
-            {{ range $location, $dates := (index $.Relations.Index
-            $index).DatesLocations }}
-            <li class="location-item">
-              {{ $location }}
-              <ol style="list-style-type: none">
-                {{ range $index3, $date := $dates }}
-                <li>{{ $date }}</li>
-                {{end}}
-              </ol>
-            </li>
-            {{end}}
-          </ul>
-        </div>
-      </details>
     </div>
 
-    <div class="image-item">
-      <img src="{{ $artist.Image }}" class="image-band" />
-    </div>
+    Creation date: {{ $artist.CreationDate }}<br />
+    First album: {{$artist.FirstAlbum }}<br />
+    <details>
+      <summary>Concert dates and locations:</summary>
+      <div>
+        <!-- Outer list of locations -->
+        <ul style="list-style-type: none">
+          {{ range $location, $dates := (index $.Relations.Index
+          $index).DatesLocations }}
+          <li class="location-item">
+            {{ $location }}
+
+            <!-- inner list of dates -->
+            <ol style="list-style-type: none">
+              {{ range $index3, $date := $dates }}
+              <li>{{ $date }}</li>
+              {{end}}
+            </ol>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="image-item">
+    <img src="{{ $artist.Image }}" class="band-image" />
   </div>
 </div>
 
