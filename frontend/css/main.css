@@ -29,7 +29,7 @@ body {
   width: 90%;
   background-color: rgb(233, 233, 233);
   margin: 1vh auto 1vh auto;
-  border-radius: 5vh;
+  border-radius: 2vh;
 
   display: flex;
   flex-direction: row;
