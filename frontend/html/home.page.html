@@ -20,10 +20,14 @@
       </div>
     </div>
 
-    Creation date: {{ $artist.CreationDate }}<br />
-    First album: {{$artist.FirstAlbum }}<br />
+    <p class="gray-text no-margins">Creation date:</p>
+    <p class="indented-text no-margins">{{ $artist.CreationDate }}</p>
+    <p class="gray-text no-margins">First album:</p>
+    <p class="indented-text no-margins">{{$artist.FirstAlbum }}</p>
     <details>
-      <summary>Concert dates and locations:</summary>
+      <summary class="gray-text no-margins">
+        Concert dates and locations:
+      </summary>
       <div>
         <!-- Outer list of locations -->
         <ul style="list-style-type: none">

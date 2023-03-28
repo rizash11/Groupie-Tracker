@@ -82,3 +82,16 @@ body {
   vertical-align: text-top;
   margin: auto;
 }
+
+.gray-text {
+  color: rgb(141, 141, 141);
+}
+
+.indented-text {
+  margin-left: 5%;
+}
+
+.no-margins {
+  margin-top: 0;
+  margin-bottom: 0;
+}
