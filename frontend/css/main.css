@@ -42,7 +42,7 @@ body {
   width: 90%;
   background-color: rgb(233, 233, 233);
   margin: 1vh auto 1vh auto;
-  border-radius: 2vh;
+  border-radius: 5vh;
 
   display: flex;
   flex-direction: row;
@@ -58,7 +58,7 @@ body {
   width: 20%;
 }
 .band-image {
-  width: 100%;
+  width: 60%;
   margin-top: 5%;
   margin-bottom: 5%;
   border-radius: 5%;
@@ -104,7 +104,31 @@ body {
   margin-left: 5%;
 }
 
-.no-margins {
+.no-top-margin {
   margin-top: 0;
+}
+
+.no-bottom-margin {
   margin-bottom: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-container {
+    width: 90%;
+    border-radius: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-item {
+    width: 90%;
+    order: 1;
+  }
+
+  .info-item {
+    width: 90%;
+    order: 2;
+  }
 }
