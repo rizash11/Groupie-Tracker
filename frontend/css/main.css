@@ -1,3 +1,8 @@
+p,
+details {
+  font-size: 1.5vh;
+}
+
 body {
   text-align: center;
   background-color: white;
