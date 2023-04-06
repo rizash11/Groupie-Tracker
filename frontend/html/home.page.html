@@ -10,7 +10,11 @@
       <h6 class="id">Id: #{{ $artist.Id }}</h6>
 
       <div class="nameNmembers">
-        <h3 class="band-name">{{ $artist.Name }}</h3>
+        <h3 class="band-name">
+          <a href="{{ $artist.Artists_link }}" target="_blank"
+            >{{ $artist.Name }}</a
+          >
+        </h3>
 
         {{ $length := len $artist.Members}}
         <p class="band-members">

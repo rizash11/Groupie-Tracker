@@ -14,6 +14,7 @@ func main() {
 	}
 
 	app.Unmarshal()
+	app.AddLinks()
 
 	my_server := &http.Server{
 		Addr:    ":4001",

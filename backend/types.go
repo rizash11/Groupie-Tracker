@@ -19,9 +19,10 @@ type artist struct {
 	Members      []string
 	CreationDate int
 	FirstAlbum   string
-	Locations    string
-	ConcertDates string
-	Relations    string
+	Locations    template.URL
+	ConcertDates template.URL
+	Relations    template.URL
+	Artists_link template.URL
 }
 
 type template_data struct {

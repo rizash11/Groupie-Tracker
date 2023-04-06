@@ -2,9 +2,11 @@ package main
 
 import (
 	"encoding/json"
+	"html/template"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 )
 
 func (app *application) error_checker(err error) {
@@ -41,6 +43,13 @@ func (app *application) Unmarshal() {
 
 	err = json.Unmarshal(data, &app.td.Relations)
 	app.error_checker(err)
+}
+
+func (app *application) AddLinks() {
+	for i := range app.td.Artists {
+		link := "https://groupietrackers.herokuapp.com/api/artists/" + strconv.Itoa(i+1)
+		app.td.Artists[i].Artists_link = template.URL(link)
+	}
 }
 
 func (app *application) NotFound(w http.ResponseWriter, r *http.Request) {
