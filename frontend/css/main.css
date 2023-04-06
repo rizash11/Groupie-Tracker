@@ -13,7 +13,7 @@ h6 {
 
 body {
   text-align: center;
-  background-color: white;
+  background-color: rgb(233, 233, 233);
   margin: 0;
 }
 
@@ -40,7 +40,7 @@ body {
 
 .card-container {
   width: 90%;
-  background-color: rgb(233, 233, 233);
+  background-color: whitesmoke;
   margin: 1vh auto 1vh auto;
   border-radius: 5vh;
 

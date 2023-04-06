@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"log"
+	"net/http"
 )
 
 type application struct {
@@ -56,4 +57,8 @@ type struct_relations struct {
 type index_relation struct {
 	Id             int
 	DatesLocations map[string][]string
+}
+
+type neutered_fs struct {
+	fs http.FileSystem
 }

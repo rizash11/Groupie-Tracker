@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
 func (app *application) error_checker(err error) {
@@ -54,4 +55,30 @@ func (app *application) ServerError(w http.ResponseWriter, r *http.Request, err 
 
 func (td *template_data) Add(x, y int) int {
 	return x + y
+}
+
+func (nfs *neutered_fs) Open(dir string) (http.File, error) {
+	f, err := nfs.fs.Open(dir)
+	if err != nil {
+		return nil, err
+	}
+
+	s, err := f.Stat()
+	if err != nil {
+		return nil, err
+	}
+
+	if s.IsDir() {
+		index := filepath.Join(dir, "index.html")
+		if _, err = nfs.fs.Open(index); err != nil {
+			closeErr := f.Close()
+			if closeErr != nil {
+				return nil, closeErr
+			}
+
+			return nil, err
+		}
+	}
+
+	return f, nil
 }
