@@ -46,8 +46,8 @@ func (app *application) Unmarshal() {
 }
 
 func (app *application) AddLinks() {
-	for i := range app.td.Artists {
-		link := "https://groupietrackers.herokuapp.com/api/artists/" + strconv.Itoa(i+1)
+	for i, artist := range app.td.Artists {
+		link := "https://groupietrackers.herokuapp.com/api/artists/" + strconv.Itoa(artist.Id)
 		app.td.Artists[i].Artists_link = template.URL(link)
 	}
 }

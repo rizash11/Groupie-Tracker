@@ -1,0 +1,20 @@
+@media only screen and (max-width: 800px) {
+  .card-container {
+    width: 90%;
+    border-radius: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-item {
+    width: 90%;
+    order: 1;
+  }
+
+  .info-item {
+    width: 90%;
+    order: 2;
+  }
+}

@@ -1,0 +1,57 @@
+.card-container {
+  width: 90%;
+  background-color: rgb(245, 245, 245);
+  margin: 1vh auto 1vh auto;
+  border-radius: 5vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info-item {
+  width: 60%;
+  text-align: left;
+}
+
+.image-item {
+  width: 20%;
+}
+.band-image {
+  width: 60%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 5%;
+}
+
+.location-item {
+  margin-bottom: 2vh;
+}
+
+.card-header {
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.id {
+  width: 10%;
+  text-align: left;
+  vertical-align: text-top;
+}
+
+.nameNmembers {
+  width: 90%;
+  margin: 2vh auto auto;
+}
+
+.band-name {
+  vertical-align: text-bottom;
+  margin: auto;
+}
+
+.band-members {
+  vertical-align: text-top;
+  margin: auto;
+}

@@ -1,34 +1,10 @@
-p,
-details {
-  font-size: 1rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h6 {
-  font-size: 0.8rem;
-}
-
-body {
-  text-align: center;
-  background-color: rgb(230, 230, 230);
-  margin: 0;
-}
-
-.fixed-header {
-  position: fixed;
-  height: 5vh;
-  width: 100%;
-}
-
-.footer {
-  margin: 5vh auto 2.5vh;
-}
+@import "card-container.css";
+@import "general.css";
+@import "phone.css";
+@import "header.css";
 
 .main-header {
-  height: 50vh;
+  height: 45vh;
   margin: 0;
   background-color: rgb(32, 35, 41);
   color: white;
@@ -39,106 +15,14 @@ body {
   align-items: center;
 }
 
-.card-container {
-  width: 90%;
-  background-color: rgb(245, 245, 245);
-  margin: 1vh auto 1vh auto;
-  border-radius: 5vh;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.info-item {
-  width: 60%;
-  text-align: left;
-}
-
-.image-item {
-  width: 20%;
-}
-.band-image {
-  width: 60%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-radius: 5%;
-}
-
-.location-item {
-  margin-bottom: 2vh;
-}
-
-.card-header {
+body {
   text-align: center;
-
-  display: flex;
-  flex-direction: row;
+  background-color: rgb(230, 230, 230);
+  margin: 0;
+  position: relative;
+  top: 5vh;
 }
 
-.id {
-  width: 10%;
-  text-align: left;
-  vertical-align: text-top;
-}
-
-.nameNmembers {
-  width: 90%;
-  margin: 2vh auto auto;
-}
-
-.band-name {
-  vertical-align: text-bottom;
-  margin: auto;
-}
-
-.band-members {
-  vertical-align: text-top;
-  margin: auto;
-}
-
-.gray-text {
-  color: rgb(141, 141, 141);
-}
-
-.indented-text {
-  margin-left: 5%;
-}
-
-.no-top-margin {
-  margin-top: 0;
-}
-
-.no-bottom-margin {
-  margin-bottom: 0;
-}
-
-@media only screen and (max-width: 800px) {
-  .card-container {
-    width: 90%;
-    border-radius: 2vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-item {
-    width: 90%;
-    order: 1;
-  }
-
-  .info-item {
-    width: 90%;
-    order: 2;
-  }
-}
-
-a:link {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: darkblue;
+.footer {
+  margin: 5vh auto 2.5vh;
 }
