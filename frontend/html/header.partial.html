@@ -1,5 +1,12 @@
 {{define "header"}}
 
-<div class="fixed-header"></div>
+<div class="fixed-header">
+  <form>
+    <label for="c-date-filter">Creation date:</label>
+    <input type="text" id="c-date-filter" name="c-date-filter" />
+
+    <input type="submit" value="search" />
+  </form>
+</div>
 
 {{end}}
