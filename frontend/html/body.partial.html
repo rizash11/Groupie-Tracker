@@ -2,8 +2,7 @@
 
 <h1 class="main-header">Favourite Music Bands API</h1>
 
-{{range $index, $artist := .Artists}}
-
+{{range $index, $artist := .Artists}} {{if $artist.Show }}
 <div class="card-container">
   <div class="info-item">
     <div class="card-header">
@@ -58,4 +57,4 @@
   </div>
 </div>
 
-{{end}} {{end}}
+{{end}} {{end}} {{end}}

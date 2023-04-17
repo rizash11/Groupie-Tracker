@@ -23,6 +23,7 @@ type artist struct {
 	ConcertDates template.URL
 	Relations    template.URL
 	Artists_link template.URL
+	Show         bool
 }
 
 type template_data struct {
