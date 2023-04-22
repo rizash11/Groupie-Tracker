@@ -5,3 +5,12 @@
   background-color: aqua;
   top: 0;
 }
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.number-input {
+  /* width: 5ch; */
+}

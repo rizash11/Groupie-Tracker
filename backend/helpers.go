@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"strings"
 )
 
 func (app *application) error_checker(err error) {
@@ -22,6 +23,11 @@ func (app *application) Unmarshal() {
 
 	err = json.Unmarshal(data, &app.td.Artists)
 	app.error_checker(err)
+
+	for i, artist := range app.td.Artists {
+		first_album_date := strings.Split(artist.FirstAlbum, "-")
+		app.td.Artists[i].FirstAlbum = first_album_date[2] + "-" + first_album_date[1] + "-" + first_album_date[0]
+	}
 
 	// DATES
 	data, err = os.ReadFile("./backend/api/dates.txt")

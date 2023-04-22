@@ -35,3 +35,15 @@ a:link {
 a:hover {
   color: darkblue;
 }
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}

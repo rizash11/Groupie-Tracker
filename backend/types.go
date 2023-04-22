@@ -24,6 +24,7 @@ type artist struct {
 	Relations    template.URL
 	Artists_link template.URL
 	Show         bool
+	filters      struct_filters
 }
 
 type template_data struct {
@@ -31,6 +32,7 @@ type template_data struct {
 	Dates     struct_dates
 	Locations struct_locations
 	Relations struct_relations
+	F_errs    filter_errors
 }
 
 type struct_dates struct {
@@ -63,4 +65,16 @@ type index_relation struct {
 
 type neutered_fs struct {
 	fs http.FileSystem
+}
+
+type struct_filters struct {
+	show_by_cdate       bool
+	show_by_first_album bool
+	show_by_members     bool
+}
+
+type filter_errors struct {
+	Cdate_err      error
+	Firstalbum_err error
+	Members_err    error
 }

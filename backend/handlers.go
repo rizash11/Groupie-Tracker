@@ -3,7 +3,6 @@ package main
 import (
 	"html/template"
 	"net/http"
-	"strconv"
 )
 
 func (app *application) router() *http.ServeMux {
@@ -29,23 +28,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for i := range app.td.Artists {
-		app.td.Artists[i].Show = true
-	}
-
-	r.ParseForm()
-	c_date_filter, err := strconv.Atoi(r.FormValue("c-date-filter"))
-	if err == nil {
-		for i := range app.td.Artists {
-			app.td.Artists[i].Show = false
-		}
-
-		for i, artist := range app.td.Artists {
-			if c_date_filter == artist.CreationDate {
-				app.td.Artists[i].Show = true
-			}
-		}
-	}
+	app.filter(r)
 
 	err = tmpl.Execute(w, app.td)
 	if err != nil {
@@ -53,7 +36,3 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
-
-// func (app *application) filter(w http.ResponseWriter, r *http.Request) {
-
-// }
