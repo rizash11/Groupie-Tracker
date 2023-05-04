@@ -11,23 +11,19 @@ func (app *application) filter(r *http.Request) {
 	for i := range app.td.Artists {
 		app.td.Artists[i].Show = false
 	}
-	app.td.F_errs = filter_errors{
+	app.td.Filter_errors = filter_error{
 		Cdate_err:      nil,
 		Firstalbum_err: nil,
+		Members_err:    nil,
+		Locations_err:  nil,
 	}
 
 	r.ParseForm()
-	if err := app.filter_by_cdate(r); err != nil {
-		app.td.F_errs.Cdate_err = err
-	}
 
-	if err := app.filter_by_firstalbum(r); err != nil {
-		app.td.F_errs.Firstalbum_err = err
-	}
-
-	if err := app.filter_by_members(r); err != nil {
-		app.td.F_errs.Members_err = err
-	}
+	app.td.Filter_errors.Cdate_err = app.filter_by_cdate(r)
+	app.td.Filter_errors.Firstalbum_err = app.filter_by_firstalbum(r)
+	app.td.Filter_errors.Members_err = app.filter_by_members(r)
+	app.td.Filter_errors.Locations_err = app.filter_by_locations(r)
 
 	for i := range app.td.Artists {
 		f1 := app.td.Artists[i].filters.show_by_cdate
@@ -146,6 +142,14 @@ func (app *application) filter_by_members(r *http.Request) error {
 		if members == len(artist.Members) {
 			app.td.Artists[i].filters.show_by_members = true
 		}
+	}
+
+	return nil
+}
+
+func (app *application) filter_by_locations(r *http.Request) error {
+	for i := range app.td.Artists {
+		app.td.Artists[i].filters.show_by_location = true
 	}
 
 	return nil

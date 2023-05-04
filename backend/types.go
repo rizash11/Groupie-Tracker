@@ -28,11 +28,11 @@ type artist struct {
 }
 
 type template_data struct {
-	Artists   []artist
-	Dates     struct_dates
-	Locations struct_locations
-	Relations struct_relations
-	F_errs    filter_errors
+	Artists       []artist
+	Dates         struct_dates
+	Locations     struct_locations
+	Relations     struct_relations
+	Filter_errors filter_error
 }
 
 type struct_dates struct {
@@ -71,10 +71,12 @@ type struct_filters struct {
 	show_by_cdate       bool
 	show_by_first_album bool
 	show_by_members     bool
+	show_by_location    bool
 }
 
-type filter_errors struct {
+type filter_error struct {
 	Cdate_err      error
 	Firstalbum_err error
 	Members_err    error
+	Locations_err  error
 }
