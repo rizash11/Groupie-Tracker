@@ -10,3 +10,23 @@
   color: red;
   font-size: 0.8em;
 }
+
+.hide {
+  display: none;
+}
+
+.locations-list {
+  background-color: lightgray;
+  position: absolute;
+  right: 2.5vw;
+  width: 30vw;
+  height: 20vh;
+}
+
+#locations-trigger:checked ~ .locations-list {
+  display: block;
+}
+
+.visually-hidden {
+  opacity: 0;
+}

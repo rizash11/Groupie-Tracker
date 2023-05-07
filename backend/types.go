@@ -7,9 +7,11 @@ import (
 )
 
 type application struct {
-	info_log  *log.Logger
-	error_log *log.Logger
-	td        *template_data
+	info_log          *log.Logger
+	error_log         *log.Logger
+	td                *template_data
+	locations_filter1 map[string][]*artist
+	locations_filter2 map[string]map[string][]*artist
 }
 
 type artist struct {

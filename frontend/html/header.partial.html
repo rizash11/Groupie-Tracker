@@ -2,6 +2,7 @@
 
 <div class="fixed-header">
   <form class="horizontal-flex">
+    <!-- Filter by creation date -->
     <div class="vertical-flex">
       <div>
         <label for="c-date-filter-1">Creation date from:</label>
@@ -23,11 +24,12 @@
           size="5"
         />
       </div>
-      {{if .F_errs.Cdate_err}}
-      <p class="error no-top-margin">{{.F_errs.Cdate_err}}</p>
+      {{if .Filter_errors.Cdate_err}}
+      <p class="error no-top-margin">{{.Filter_errors.Cdate_err}}</p>
       {{end}}
     </div>
 
+    <!-- Filter by first album -->
     <div class="vertical-flex">
       <div>
         <label for="first-album-1">First album date from:</label>
@@ -36,11 +38,12 @@
         <input type="date" id="first-album-2" name="first-album-2" />
       </div>
 
-      {{if .F_errs.Firstalbum_err}}
-      <p class="error no-top-margin">{{.F_errs.Firstalbum_err}}</p>
+      {{if .Filter_errors.Firstalbum_err}}
+      <p class="error no-top-margin">{{.Filter_errors.Firstalbum_err}}</p>
       {{end}}
     </div>
 
+    <!-- Filter by number of members -->
     <div>
       <label for="members-filter">Number of members:</label>
       <input
@@ -51,6 +54,18 @@
         max="100"
         size="2"
       />
+    </div>
+
+    <!-- Filter by concert locations -->
+    <div>
+      <label for="locations-trigger">Concert locations:</label>
+      <input
+        type="checkbox"
+        id="locations-trigger"
+        name="locations-trigger"
+        class="locations-trigger visually-hidden"
+      />
+      <div class="locations-list hide">{{ }}</div>
     </div>
 
     <input type="submit" value="search" />
