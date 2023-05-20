@@ -2,8 +2,10 @@
   position: fixed;
   height: 5vh;
   width: 100%;
-  background-color: aqua;
+  background-color: darkgray;
   top: 0;
+  text-align: right;
+  color: whitesmoke;
 }
 
 .error {
@@ -16,7 +18,7 @@
 }
 
 .locations-list {
-  background-color: whitesmoke;
+  background-color: darkgray;
   position: absolute;
   right: 2.5vw;
   width: 40vw;
@@ -32,4 +34,9 @@
 
 .visually-hidden {
   display: none;
+}
+
+#refresh-button {
+  position: relative;
+  right: 5vh;
 }
