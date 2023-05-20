@@ -10,7 +10,6 @@ type application struct {
 	info_log          *log.Logger
 	error_log         *log.Logger
 	td                *template_data
-	locations_filter1 map[string][]*artist
 	locations_filter2 map[string]map[string][]*artist
 }
 
@@ -32,7 +31,7 @@ type artist struct {
 type template_data struct {
 	Artists       []artist
 	Dates         struct_dates
-	Locations     struct_locations
+	Locations     map[string][]string
 	Relations     struct_relations
 	Filter_errors filter_error
 }

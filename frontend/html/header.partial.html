@@ -65,7 +65,29 @@
         name="locations-trigger"
         class="locations-trigger visually-hidden"
       />
-      <div class="locations-list hide">{{ }}</div>
+      <div class="locations-list hide">
+        {{ range $country, $cities := .Locations }}
+        <ul style="list-style-type: none">
+          <li>
+            {{$country}}
+            <ol style="list-style-type: none">
+              {{range $index, $city := $cities}}
+              <li>
+                <label
+                  >{{$city}}
+                  <input
+                    type="checkbox"
+                    name="city"
+                    value="{{$country}}-{{$city}}"
+                  />
+                </label>
+              </li>
+              {{end}}
+            </ol>
+          </li>
+        </ul>
+        {{end}}
+      </div>
     </div>
 
     <input type="submit" value="search" />

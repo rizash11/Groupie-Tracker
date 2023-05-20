@@ -11,7 +11,6 @@ func main() {
 		info_log:          log.New(os.Stdout, "INFO:\t", log.Ldate|log.Ltime),
 		error_log:         log.New(os.Stderr, "ERROR:\t", log.Ldate|log.Ltime|log.Lshortfile),
 		td:                &template_data{},
-		locations_filter1: map[string][]*artist{},
 		locations_filter2: map[string]map[string][]*artist{},
 	}
 

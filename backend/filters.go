@@ -4,6 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 func (app *application) filter(r *http.Request) {
@@ -29,8 +30,9 @@ func (app *application) filter(r *http.Request) {
 		f1 := app.td.Artists[i].filters.show_by_cdate
 		f2 := app.td.Artists[i].filters.show_by_first_album
 		f3 := app.td.Artists[i].filters.show_by_members
+		f4 := app.td.Artists[i].filters.show_by_location
 
-		if f1 && f2 && f3 {
+		if f1 && f2 && f3 && f4 {
 			app.td.Artists[i].Show = true
 		}
 	}
@@ -150,6 +152,20 @@ func (app *application) filter_by_members(r *http.Request) error {
 func (app *application) filter_by_locations(r *http.Request) error {
 	for i := range app.td.Artists {
 		app.td.Artists[i].filters.show_by_location = true
+	}
+
+	countries_cities := r.Form["city"]
+	if len(countries_cities) != 0 {
+		for i := range app.td.Artists {
+			app.td.Artists[i].filters.show_by_location = false
+		}
+	}
+
+	for _, country_city := range countries_cities {
+		split := strings.Split(country_city, "-")
+		for _, link := range app.locations_filter2[split[0]][split[1]] {
+			link.filters.show_by_location = true
+		}
 	}
 
 	return nil
