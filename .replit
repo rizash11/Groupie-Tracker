@@ -1,6 +1,4 @@
-run = "./backend"
-hidden = ["main"]
-compile = "go build -o ./backend"
+run = "go run ./backend"
 
 [languages.go]
 pattern = "**/*.go"
