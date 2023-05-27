@@ -31,4 +31,16 @@
   #filters > * {
     margin: 1rem;
   }
+
+  #locations-list {
+    display: flex;
+    position: relative;
+    width: 80vw;
+    height: 50vh;
+    flex-wrap: wrap;
+  }
+
+  #locations-filter {
+    text-align: left;
+  }
 }

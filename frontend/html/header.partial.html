@@ -60,7 +60,7 @@
     </div>
 
     <!-- Filter by concert locations -->
-    <div>
+    <div id="locations-filter">
       <label for="locations-trigger">Concert locations:</label>
       <input
         type="checkbox"
@@ -68,7 +68,7 @@
         name="locations-trigger"
         class="locations-trigger hide"
       />
-      <div class="locations-list hide">
+      <div id="locations-list" class="locations-list hide">
         {{ range $country, $cities := .Locations }}
         <ul style="list-style-type: none">
           <li>
