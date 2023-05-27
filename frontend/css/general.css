@@ -47,3 +47,15 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.hide {
+  display: none;
+}

@@ -1,20 +1,19 @@
-.fixed-header {
+#fixed-header {
   position: fixed;
-  height: 5vh;
   width: 100%;
   background-color: darkgray;
   top: 0;
   text-align: right;
   color: whitesmoke;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .error {
   color: red;
   font-size: 0.8em;
-}
-
-.hide {
-  display: none;
 }
 
 .locations-list {
@@ -32,11 +31,26 @@
   flex-wrap: wrap;
 }
 
-.visually-hidden {
+#refresh-button {
+  position: relative;
+}
+
+.filters {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#filter-switch:checked ~ .filters {
   display: none;
 }
 
-#refresh-button {
-  position: relative;
-  right: 5vh;
+#filter-switch:checked ~ #refresh-button {
+  display: none;
+}
+
+#fixed-header #filter-switcher:checked {
+  background-color: rgb(32, 35, 41);
 }

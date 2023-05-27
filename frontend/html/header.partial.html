@@ -1,7 +1,10 @@
 {{define "header"}}
 
-<div class="fixed-header">
-  <form class="horizontal-flex">
+<div id="fixed-header">
+  <label for="filter-switch"> Hide filters </label>
+  <input id="filter-switch" name="filter-switch" type="checkbox" class="hide" />
+
+  <form id="filters" class="filters">
     <!-- Filter by creation date -->
     <div class="vertical-flex">
       <div>
@@ -63,7 +66,7 @@
         type="checkbox"
         id="locations-trigger"
         name="locations-trigger"
-        class="locations-trigger visually-hidden"
+        class="locations-trigger hide"
       />
       <div class="locations-list hide">
         {{ range $country, $cities := .Locations }}
@@ -90,13 +93,15 @@
       </div>
     </div>
 
-    <div>
+    <div class="vertical-flex">
       <button type="reset">reset</button>
       <input type="submit" value="search" />
     </div>
   </form>
-  <form action="/">
-    <button type="submit" id="refresh-button">refresh</button>
+
+  <!-- refresh button -->
+  <form action="/" id="refresh-button">
+    <button type="submit">refresh</button>
   </form>
 </div>
 
